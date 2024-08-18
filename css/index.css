@@ -1,0 +1,146 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #cdee12;
+    color: #333;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 1rem;
+    padding: 0;
+    display: flex;
+}
+
+.container ul li a img {
+    transition: transform 0.3s ease;
+    margin-left: 2rem;
+}
+
+.container ul li a:hover img {
+    transform: scale(1.2);
+}
+
+.welcome-section {  
+    color:black;
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.welcome-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.destinations-section {
+    padding: 8rem 0;
+    background-color: #fff;
+}
+
+.destinations-section .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.destination-card {
+    background-color:#f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 30%;
+    margin-bottom: 2rem;
+    text-align: center;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.destination-card:hover {
+    transform: scale(1.05);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.destination-card img {
+    width: 100%;
+    height: auto;
+}
+
+.destination-card h3 {
+    margin: 1rem 0;
+}
+
+.contact-section {
+    background-color: #4CAF50;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-section input,
+.contact-section textarea {
+    width: 80%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 4px;
+}
+
+.contact-section button {
+    background-color: white;
+    color: #4CAF50;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Evita el desplazamiento */
+    height: 100%;
+}
+
+.content {
+    max-height: 500vh; /* Limita la altura visible del contenido */
+    overflow: hidden; /* Oculta el contenido que excede el área visible */
+    
+    transition: max-height 0.5s ease-out;
+}
+
+.content.expanded {
+    max-height: none; /* Ajusta según sea necesario para mostrar más contenido */
+}
+
+
