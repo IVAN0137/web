@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubre el Mundo</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>DESCUBRE LO MÁS BONITO DE LA SIERRA GORDA</h1>
+            <nav>
+                <ul>
+                    
+                    <li><a href="mapa.html"><img src="res/marcador.png" alt="Destinos" width="30px" height="30px"></a></li>
+                    <li><a href="contactanos.html"><img src="res/llamada-telefonica.png" alt="Contáctanos" width="30px" height="30px"></a></li>
+                    <li><a href="calificanos.html"><img src="res/estrella.png" alt="Califícanos" width="30px" height="30px"></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="content" id="mainContent">
+        <section id="welcome" class="welcome-section">
+            <div class="welcome-content">
+                <h2>Bienvenido a tu próxima aventura</h2>
+                <p>Explora los destinos más impresionantes con nosotros.</p>
+                <h1 id="verMasTexto">Ver más</h1>
+                <div class="btn-ver">
+                    <button id="verBtn">
+                        <img id="verBtnImg" src="res/ojo.png" alt="ver más" height="30px" width="30px">
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="destinations" class="destinations-section">
+            <div><h2>Destinos Populares</h2></div>
+            <div class="container">
+                <div class="destination-card">
+                    <img src="res/PINAL.jpg" alt="D">
+                    <a href="pinal.html"><h3>PINAL DE AMOLES</h3></a>
+                    <p>EL PUEBLO MÁGICO QUE DESAPARECE EN LA NEBLINA</p>
+                </div>  
+                <div class="destination-card">
+                    <a href="pinal.html"><img src="res/MIRADOR 4 PALOS.jpg" alt="D"></a>
+                    <a href="pinal.html"><h3>MIRADOR DE CUATRO PALOS</h3></a>
+                    <p>VIVE UNA EXPERIENCIA INOLVIDABLE A UNA ALTITUD DE 2,727 METROS SOBRE EL NIVEL DEL MAR,
+                         DESDE SU CIMA SE PUEDEN APRECIAR DIVERSOS ATRACTIVOS TURÍSTICOS, INCLUYENDO EL CERRO 
+                         DE LA MEDIA LUNA, LA PEÑA DE BERNAL Y LA IMPRESIONANTE SIERRA GORDA.</p>
+                </div>
+                <div class="destination-card">
+                    <a href="cascadachuveje.html"><img src="res/chuveje.jpg" alt="DF"></a>
+                    <h3>CASCADA EL CHUVEJE</h3>
+                    <p>EL DESTINO PERFECTO PARA EXPLORAR LOS ATRACTIVOS TURÍSTICOS DE PINAL DE AMOLES ES UNA IMPRESIONANTE 
+                        CASCADA DE 35 METROS DE ALTURA. ESTÁ RODEADA DE EXUBERANTE VEGETACIÓN, INVITANDO A DISFRUTAR DEL PAISAJE. 
+                        ES IDEAL PARA PLANIFICAR UNA EXCURSIÓN Y ACAMPAR EN EL LUGAR.</p>
+                </div>
+                <div class="destination-card">
+                    <img src="res/PUERTA DEL CIERLO.jpg" alt="D">
+                    <a href="puertadelcielo.html"><h3>PUERTA DEL CIELO</h3></a>
+                    <p>EL PUEBLO MÁGICO QUE DESAPARECE EN LA NEBLINA</p>
+                </div>
+                <div class="destination-card">
+                    <img src="res/puente de dios.jpg" alt="D">
+                    <a href="puentededios.html"><h3>PUENTE DE DIOS</h3></a>
+                    <p></p>
+                </div>
+                <div class="destination-card">
+                   <a href=""> <video id="miVideo" width="440" height="360" autoplay loop muted poster="imagen-poster.png">
+                        <source src="" type="video/mp4"></a>
+                        
+                    </video>
+                    <a href="puentededios.html"><h3>PUENTE DE DIOS</h3></a>
+                    <p></p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <p>© 2024 Descubre el Mundo. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        
+        document.getElementById('verBtn').addEventListener('click', function() {
+            const content = document.getElementById('mainContent');
+            const img = document.getElementById('verBtnImg');
+            const texto = document.getElementById('verMasTexto');
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                img.src = 'res/ojo.png'; // Imagen de "Ver más"
+                texto.textContent = 'Ver más';
+                document.body.style.overflow = 'hidden'; // Vuelve a ocultar el desplazamiento
+            } else {
+                content.classList.add('expanded');
+                img.src = 'res/ojoc.png'; // Imagen de "Ver menos"
+                texto.textContent = 'Ver menos';
+                document.body.style.overflow = 'auto'; // Permite el desplazamiento
+                window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: 'smooth'
+                });
+            }
+        });
+
+        const video = document.getElementById('miVideo');
+
+        video.addEventListener('mouseover', () => {
+            video.play().catch(error => {
+                console.error('Error al reproducir el video:', error);
+            });
+        });
+
+        video.addEventListener('mouseout', () => {
+            video.pause();
+        });
+    </script>
+</body>
+</html>
