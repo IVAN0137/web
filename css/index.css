@@ -144,3 +144,63 @@ body, html {
 }
 
 
+/* Ajustes para dispositivos con un ancho de pantalla de hasta 768px */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container ul li {
+        margin: 0.5rem 0;
+    }
+
+    .welcome-section {
+        padding: 3rem 1rem;
+    }
+
+    .destination-card {
+        width: 90%;
+        margin: 1rem auto;
+    }
+}
+
+/* Ajustes para dispositivos con un ancho de pantalla de hasta 480px */
+@media (max-width: 480px) {
+    header .container {
+        text-align: center;
+    }
+
+    nav ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    .container ul li a img {
+        margin-left: 0;
+    }
+
+    .welcome-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .destination-card {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    .contact-section input,
+    .contact-section textarea {
+        width: 90%;
+    }
+
+    .contact-section button {
+        width: 90%;
+    }
+}
