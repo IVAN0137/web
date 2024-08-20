@@ -7,8 +7,8 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 // Añadir controles de zoom y escala
-L.control.zoom({
-    position: 'topright'
+L.control.scale({
+    position: 'topright'        
 }).addTo(map);
 
 L.control.scale().addTo(map);
@@ -17,19 +17,30 @@ var currentRoute = null;
 
 // Array de marcadores
 var markers = [
-    { coords: [21.13480, -99.62855], name: 'PINAL DE AMOLES', popup: '<b>PINAL DE AMOLES</b><br><a href="pinal.html"><img src="res/PINAL.jpg" alt="Mirador Pinal" width="150" height="100"></a>' },
-    { coords: [21.18546, -99.61196], name: 'PUENTE DE DIOS', popup: '<b>PUENTE DE DIOS</b><br><a href="puentededios.html"><img src="res/puente de dios.jpg" alt="Puente De Dios" width="150" height="100"></a>' },
-    { coords: [21.08033, -99.66208], name: 'MIRADOR CUATRO PALOS', popup: '<b>MIRADOR CUATRO PALOS</b><br><img src="res/mirador-cuatro-palos.jpg" alt="Mirador Cuatro Palos" width="150" height="100">' },
-    { coords: [21.13461, -99.62533], name: 'PARROQUIA SAN JOSE PINAL DE AMOLES', popup: '<b>PARROQUIA SAN JOSE PINAL DE AMOLES</b><br><img src="res/parroquia-san-jose.jpg" alt="Parroquia San Jose" width="150" height="100">' },
-    { coords: [21.13434, -99.62746], name: 'MUSEO COMUNITARIO PINAL DE AMOLES', popup: '<b>MUSEO COMUNITARIO PINAL DE AMOLES</b><br><img src="res/museo-comunitario.jpg" alt="Museo Comunitario" width="150" height="100">' },
-    { coords: [21.13324, -99.62546], name: 'AUDITORIO MUNICIPAL', popup: '<b>AUDITORIO MUNICIPAL</b><br><img src="res/auditorio-municipal.jpg" alt="Auditorio Municipal" width="150" height="100">' },
-    { coords: [21.161765, -99.561271], name: 'CASCADA EL CHUVEJE', popup: '<b>CASCADA EL CHUVEJE</b><br><a href="#"><img src="res/chuveje.jpg" alt="Cascada El Chuveje" width="150" height="100"></a>' },
-    { coords: [21.126811, -99.637523], name: 'PUERTA DEL CIELO', popup: '<b>PUERTA DEL CIELO</b><br><img src="res/puerta-del-cielo.jpg" alt="Puerta del Cielo" width="150" height="100">' },
-    { coords: [21.035866, -99.619614], name: 'CAMPAMENTO EL MANGAL, BUCARELI', popup: '<b>CAMPAMENTO EL MANGAL, BUCARELI</b><br><img src="res/campamento-el-mangal.jpg" alt="Campamento El Mangal" width="150" height="100">' },
-    { coords: [21.196211, -99.516402], name: 'CUEVA DE LOS RISCOS', popup: '<b>CUEVA DE LOS RISCOS</b><br><img src="res/cueva-de-los-riscos.jpg" alt="Cueva de los Riscos" width="150" height="100">' },
-    { coords: [21.233713,-99.6251149], name: 'CAÑON DEL INFIERNILLO', popup: '<b>CAÑON DEL INFIERNILLO</b><br><img src="res/canon-del-infiernillo.jpg" alt="Cañon del Infiiernillo" width="150" height="100">' },
-    { coords: [21.21668, -99.47386], name: 'JALPAN DE SERRA', popup: '<b>JALPAN DE SERRA</b><br><a href="jalpan.html"><img src="res/jalpan.jpg" alt="Jalpan De Serra" width="150" height="100"></a>' },
-    { coords: [21.18390, -99.32157], name: 'LANDA DE MATAMOROS', popup: '<b>LANDA DE MARAMOROS</b><br><img src="res/landa-de-matamoros.jpg" alt="Landa de Matamoros" width="150" height="100">' }
+    { coords: [21.13480, -99.62855], name: 'PINAL DE AMOLES', popup: '<a href="pinal.html"><b>PINAL DE AMOLES</b><br><img src="res/PINAL.jpg" alt="Mirador Pinal" width="150" height="100"></a>' },
+    { coords: [21.18546, -99.61196], name: 'PUENTE DE DIOS', popup: '<a href="pinal.html"><b>PUENTE DE DIOS</b><br><img src="res/puente de dios.jpg" alt="Puente De Dios" width="150" height="100"></a>' },
+    { coords: [21.08033, -99.66208], name: 'MIRADOR CUATRO PALOS', popup: '<a href="pinal.html"><b>MIRADOR CUATRO PALOS</b><br><img src="res/mirador-cuatro-palos.jpg" alt="Mirador Cuatro Palos" width="150" height="100"></a>' },
+    { coords: [21.13461, -99.62533], name: 'PARROQUIA SAN JOSE PINAL DE AMOLES', popup: '<a href="pinal.html"><b>PARROQUIA SAN JOSE PINAL DE AMOLES</b><br><img src="res/parroquia-san-jose.jpg" alt="Parroquia San Jose" width="150" height="100"></a>' },
+    { coords: [21.13434, -99.62746], name: 'MUSEO COMUNITARIO PINAL DE AMOLES', popup: '<a href="pinal.html"><b>MUSEO COMUNITARIO PINAL DE AMOLES</b><br><img src="res/museo-comunitario.jpg" alt="Museo Comunitario" width="150" height="100"></a>' },
+    { coords: [21.13324, -99.62546], name: 'AUDITORIO MUNICIPAL', popup: '<a href="pinal.html"><b>AUDITORIO MUNICIPAL</b><br><img src="res/auditorio-municipal.jpg" alt="Auditorio Municipal" width="150" height="100"></a>' },
+    { coords: [21.161765, -99.561271], name: 'CASCADA EL CHUVEJE', popup: '<a href="pinal.html"><b>CASCADA EL CHUVEJE</b><br><a href="#"><img src="res/chuveje.jpg" alt="Cascada El Chuveje" width="150" height="100"></a>' },
+    { coords: [21.126811, -99.637523], name: 'PUERTA DEL CIELO', popup: '<a href="pinal.html"><b>PUERTA DEL CIELO</b><br><img src="res/puerta-del-cielo.jpg" alt="Puerta del Cielo" width="150" height="100">' },
+    { coords: [21.035866, -99.619614], name: 'CAMPAMENTO EL MANGAL, BUCARELI', popup: '<a href="pinal.html"><b>CAMPAMENTO EL MANGAL, BUCARELI</b><br><img src="res/campamento-el-mangal.jpg" alt="Campamento El Mangal" width="150" height="100"></a>' },
+    { coords: [21.196211, -99.516402], name: 'CUEVA DE LOS RISCOS', popup: '<a href="pinal.html"><b>CUEVA DE LOS RISCOS</b><br><img src="res/cueva-de-los-riscos.jpg" alt="Cueva de los Riscos" width="150" height="100"></a>' },
+    { coords: [21.233713,-99.6251149], name: 'CAÑON DEL INFIERNILLO', popup: '<a href="pinal/html"><b>CAÑON DEL INFIERNILLO</b><br><img src="" alt="Cañon del Infiiernillo" width="150" height="100"></a>' },
+    { coords: [21.11297, -99.62452], name: 'MIRADOR DE LAS GUACAMAYAS ', popup: '<a href="pinal.html"><b></b><br><img src="" alt="Mirador De Las Guacamayas(Mirador De Cristal)" width="150" height="100"></a>' },
+    { coords: [21.04085, -99.61413], name: 'BUCARELI', popup: '<a href="pinal.html"><b>BUCARELI</b><br><img src="" alt="Bucareli" width="150" height="100"></a>' },
+    { coords: [21.037164, -99.614668], name: 'EX CONVENTO BUCARELI', popup: '<a href="pinal.html"><b></b><br><img src="res/" alt="Ex Convento Bucareli" width="150" height="100"></a>' },
+    { coords: [21.134362, -99.626095], name: 'MONUMENTO HACIA LOS MINEROS', popup: '<a href="pinal.html"><b>MONUMENTO HACIA LOS MINEROS</b><br><img src="res/" alt="Monumento Hacia Los Mineros" width="150" height="100"></a>' },
+    //jalpan de serra     
+    { coords: [21.217321, -99.473034], name: 'JALPAN DE SERRA', popup: '<a href="pinal.html"><b>JALPAN DE SERRA</b><br><img src="res/" alt="Jalpan De serra" width="150" height="100"></a>' },
+    { coords: [21.216758, -99.473858], name: 'MISIÓN DE SANTIANGO', popup: '<a href="jalpan.html"><b>MISIÓN DE SANTIAGO</b><br><img src="res/" alt="Jalpan" width="150" height="100"></a>' },
+    { coords: [21.20622, -99.47230], name: 'PRESA JALPAN', popup: '<a href="jalpan.html"><b>PRESA JALPAN</b><br><img src="res/" alt="Presa Jalpan" width="150" height="100"></a>' },
+    { coords: [21.217263, -99.472253], name: 'ANDADOR EL SALTO', popup: '<a href="jalpan.html"><b>ANDADOR EL SALTO</b><br><img src="res/" alt="Andador El Salto" width="150" height="100"></a>' },
+    { coords: [], name: '', popup: '<a href=""><b></b><br><img src="res/" alt="" width="150" height="100"></a>' },
+    
+
+    { coords: [21.18390, -99.32157], name: 'LANDA DE MATAMOROS', popup: '<b>LANDA DE MARAMOROS</b><br><img src="res/landa-de-matamoros.jpg" alt="Landa de Matamoros" width="150" height="100">' },
 ];
 
 // Crear marcadores y añadir eventos
