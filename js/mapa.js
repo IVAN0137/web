@@ -37,6 +37,8 @@ var markers = [
     { coords: [21.216758, -99.473858], name: 'MISIÓN DE SANTIANGO', popup: '<a href="jalpan.html"><b>MISIÓN DE SANTIAGO</b><br><img src="res/" alt="Jalpan" width="150" height="100"></a>' },
     { coords: [21.20622, -99.47230], name: 'PRESA JALPAN', popup: '<a href="jalpan.html"><b>PRESA JALPAN</b><br><img src="res/" alt="Presa Jalpan" width="150" height="100"></a>' },
     { coords: [21.217263, -99.472253], name: 'ANDADOR EL SALTO', popup: '<a href="jalpan.html"><b>ANDADOR EL SALTO</b><br><img src="res/" alt="Andador El Salto" width="150" height="100"></a>' },
+    { coords: [21.217768, -99.473729], name: 'MUSEO HISTORICO DE LA SIERRA GORDA', popup: '<a href="jalpan.html"><b>MUSEO HISTORICO DE LA SIERRA GORDA</b><br><img src="res/" alt="Museo Historico De La Sierra Gorda" width="150" height="100"></a>' },
+    { coords: [], name: '', popup: '<a href=""><b></b><br><img src="res/" alt="" width="150" height="100"></a>' },
     { coords: [], name: '', popup: '<a href=""><b></b><br><img src="res/" alt="" width="150" height="100"></a>' },
     
 
